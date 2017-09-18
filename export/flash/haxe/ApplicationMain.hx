@@ -42,6 +42,14 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
+		urls.push ("assets/images/slots.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/slot_still.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("assets/music/music-goes-here.txt");
 		types.push (lime.Assets.AssetType.TEXT);
 		
@@ -135,7 +143,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "14",
+			build: "21",
 			company: "ninjaMuffin",
 			file: "ComplimentSlots",
 			fps: 60,

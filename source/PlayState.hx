@@ -6,6 +6,7 @@ import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.math.FlxMath;
+import flixel.util.FlxColor;
 
 class PlayState extends FlxState
 {
@@ -36,6 +37,7 @@ class PlayState extends FlxState
 		
 		_bot = new FlxSprite(0, 0);
 		_bot.loadGraphic("assets/images/bot.png", false, 489, 489);
+		_bot.screenCenter(X);
 		
 		_slot0Text = new FlxText(0, yPos, 0, "Press", fontSize);
 		_slot1Text = new FlxText(0, yPos + fontSize, 0, "", fontSize);
@@ -60,7 +62,8 @@ class PlayState extends FlxState
 		
 		if (FlxG.keys.justPressed.SPACE)
 		{
-			_spinning = !_spinning;
+			FlxG.camera.fade(FlxColor.BLACK, 0.5, false, finishFade);
+			//_spinning = !_spinning;
 		}
 		
 		if (_spinning)
@@ -75,5 +78,10 @@ class PlayState extends FlxState
 		}
 		
 		super.update(elapsed);
+	}
+	
+	private function finishFade():Void
+	{
+		FlxG.switchState(new SlotState());
 	}
 }
